@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" ,initial scale="1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+    <!-- -----comment#2: the html web storage api used in this website is a session storage object---- -->
+    <script>
+      function clickCounter() {
+        if (typeof Storage !== "undefined") {
+          if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+          } else {
+            sessionStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML =
+            "You appreciated my content " +
+            sessionStorage.clickcount +
+            " time(s).";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+    <title>Positano: The Heart Of Italy</title>
+  </head>
+  <body>
+    <style>
+      .mapouter {
+        position: relative;
+        text-align: left;
+        height: 480px;
+        width: 720px;
+      }
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 480px;
+        width: 720px;
+      }
+    </style>
+    <section class="sub-header">
+      <nav>
+        <div class="nav-links">
+          <ul>
+            <li><a href="l3q1.html">HOME</a></li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Positano" target="_blank"
+                >MORE</a
+              >
+            </li>
+            <li><a href="aboutpos.html">ABOUT ME</a></li>
+          </ul>
+        </div>
+      </nav>
+      <h1>About My Home: Positano</h1>
+    </section>
+    <section class="about-us">
+      <div class="row">
+        <div class="about-col">
+          <h1>Overview:</h1>
+          <br />
+          <p>
+            Positano has been featured in several films, including Only You
+            (1994), and Under the Tuscan Sun (2003), as well as more recently in
+            Kath & Kimderella (2012) and being mentioned in the 2009 musical
+            film Nine in the song "Cinema Italiano". It has also hosted the
+            annual Cartoons on the Bay Festival, at which Pulcinella Awards for
+            excellence in animation are presented.From July 1967 and through
+            most of the 1970s, Positano was home to singer-songwriter Shawn
+            Phillips and where most of his best-known work was composed. Mick
+            Jagger and Keith Richards from The Rolling Stones wrote the song
+            "Midnight Rambler" in the cafes of Positano while on vacation.
+            Renowned director and producer Franco Zeffirelli owned the Villa
+            Treville in Positano, where he took residence over a 35-year period
+            and hosted a coterie of literati and stars of the stage and screen.
+            He hired his friend, Renzo Mongiardino, who collaborated on many of
+            his theater and opera projects, to design the exquisite interiors
+            which reflect the local design sensibilities and craftsmanship. The
+            Villa Treville has since been converted into a five-star boutique
+            hotel.
+
+            <br />
+          </p>
+          <br />
+          <br />
+
+          <center><h1>More:</h1></center>
+          <br />
+        </div>
+      </div>
+
+      <!-- ----comment#1: Alignment might differ with resolution of the device from which the website contents are being viewed---- -->
+
+      <div class="row">
+        <div class="about-col">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                width="720"
+                height="480"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?width=720&amp;height=480&amp;hl=en&amp;q=%20Positano+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              >
+              </iframe>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="about-col">
+          <iframe
+            width="720"
+            height="480"
+            src="https://www.youtube.com/embed/sz_z-CyCBwE"
+          >
+          </iframe>
+          <br />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="about-col">
+          <center><h1>Gallery:</h1></center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="about-col">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/71/Vue_de_Positano_depuis_la_plage.JPG"
+            width="720"
+            height="480"
+          />
+          <img
+            src="https://cdn.theculturetrip.com/wp-content/uploads/2021/07/tyb101-e1626774480640.jpg"
+            width="720"
+            height="480"
+          />
+          <img
+            src="https://media.istockphoto.com/photos/beautiful-positano-amalfi-coast-italy-picture-id584209898"
+            width="720"
+            height="480"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us">
+      <div class="row">
+        <div class="about-col">
+          <h1>My media:</h1>
+          <video width="720" height="480" controls class="vid">
+            <source src="positano4k.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="about-col">
+          <audio controls class="mp3">
+            <source
+              src="Billie_Eilish_-_bad_guy_Lyrics_(getmp3.pro).mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+        </div>
+        <div class="about-col">
+          <p>Select favourite Giffy❤</p>
+          <div
+            id="div1"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <img
+            id="drag1"
+            src="http://4.bp.blogspot.com/-uhjF2kC3tFc/U_r3myvwzHI/AAAAAAAACiw/tPQ2XOXFYKY/s1600/Circles-3.gif"
+            draggable="true"
+            ondragstart="drag(event)"
+            width="200"
+            height="200"
+          /><br />
+          <img
+            id="drag2"
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5eeea355389655.59822ff824b72.gif"
+            draggable="true"
+            ondragstart="drag(event)"
+            width="200"
+            height="200"
+          /><br />
+          <img
+            id="drag3"
+            src="https://i.gifer.com/6Szl.gif"
+            draggable="true"
+            ondragstart="drag(event)"
+            width="200"
+            height="200"
+          /><br />
+        </div>
+      </div>
+    </section>
+    <p>
+      <button onclick="clickCounter()" type="button" class="hero-btn green-btn">
+        Click to appreciate!
+      </button>
+    </p>
+    <div id="result"></div>
+    <section class="footer">
+      <p>Find Me on!</p>
+      <div class="icons">
+        <img
+          src="https://image.similarpng.com/very-thumbnail/2021/01/Facebook-icon-design-on-transparent-background-PNG.png"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+        />
+        <img
+          src="https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png"
+        />
+      </div>
+    </section>
+  </body>
+</html>
